@@ -1,3 +1,5 @@
+//List of all variables being used for the code quiz pulled from the html
+
 var timeEl = document.querySelector("#time");
 var startQuiz = document.querySelector("#start-quiz-button");
 var questionText = document.querySelector("#question-text");
@@ -20,6 +22,7 @@ var score = 0
 var scoreBoard = []
 var isCorrect
 
+// Variables set up for the questions so to help keep the code dry
 var questions = [{
   text: 'What is the state capital of Pennsylvania?',
   choice1: "Harrisburg",
@@ -55,7 +58,8 @@ var questions = [{
   choice3: "Tallahassee",
   correctChoice: "choice-3"
 }]
-//startTimer function starts the timer with secondsLeft to count down from 60 seconds. The startQuiz click starts the startTimer function
+//startTimer function starts the timer with secondsLeft to count down from 60 seconds. The startQuiz click starts the startTimer function. If secondsLeft is greater
+//then 0 it will move to the next question. Each question will will display 3 answers. If the answer is correct display correct, if not display wrong
 function startTimer(){
   timeEl.textContent = secondsLeft + " seconds left"
   timeEl.style.visibility="visible"
@@ -78,6 +82,7 @@ function startTimer(){
           isCorrectElem.textContent = "Wrong!"
         }
       }
+      //If time runs out before all questions are answered, display Out of Time and game over
     }
     if(!currentQInfo || secondsLeft == 0){
       clearInterval(clockTicker)
@@ -90,7 +95,7 @@ function startTimer(){
     }
   }, 1000)
 }
-
+// For the scoreboard if the anwser is correct give 10 points, if wrong mins 5
 function answerQuestion(e){
   let choiceId = e.target.id
   let currentQInfo = questions[currentQuestion]
@@ -104,7 +109,7 @@ function answerQuestion(e){
   }
   currentQuestion++
 }
-
+// Scoreboard for correct or wrong answers. This is at the end of the game and player has input initials
 function initialsSubmission(){
   var userInitials = initialsTextElem.value
   scoreBoard.push({userInitials, score})
@@ -119,7 +124,7 @@ function initialsSubmission(){
     scoreboardElem.appendChild(userScoreItem)
   })
 }
-
+//go back to the begining of the game when finished
 function restart(){
   score = 0
   currentQuestion = 0
@@ -132,7 +137,7 @@ function wipeScores() {
   scoreBoard = []
   restart()
 }
-
+// Clickers for all buttons
 startQuiz.addEventListener("click", startTimer);
 choice1.addEventListener("click", answerQuestion);
 choice2.addEventListener("click", answerQuestion);
