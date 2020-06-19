@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="style.css">
+    <title>US States Capitals Quiz</title>
+</head>
+
+<body>
+    <h1> United States Capitals Quiz</h1>  
+        <button id="start-quiz-button" type="start quiz button">Start Quiz</button>
+        <h1 id="time"></h1>          
+       
+        <ul style="visibility:hidden" id="Questions">
+            <li id="question">
+                <p id="question-text"></p>
+                <button type="button" id="choice-1"></button><br/><br/>
+                <button type="button" id="choice-2"></button><br/><br/>
+                <button type="button" id="choice-3"></button>
+                <p id="is-correct"></p>
+            </li>
+        </ul>
+        <div id="end-game" style="visibility:hidden;">
+            <h1>All done!</h1>
+            <span>Score: </span><span id="score"></span>
+            <br/>
+            <span>Enter your initials:</span><input id="initials" type="text"/>
+            <button id="initialsSubmit" type="button">Submit</button>
+        </div>
+
+        <div style="visibility:hidden;" id="scoreboard-page">
+            <ul id="scoreboard">
+            </ul>
+            <button id="go-back" type="button">Go Back</button>
+            <button id="clear-scoreboard" type="button">Clear Scoreboard</button>
+        </div>
+    
+</body>
+<script src=script.js></script>
+</html>
