@@ -6,7 +6,7 @@ https://github.com/Conchettapark/Code-Quiz
 
 
 
-![](Screen Shot 2020-06-18 at 10.44.22 PM.png)
-![](Passwordimage2.png)
-![](Passwordimage2.png)
-![](Passwordimage2.png)
+![](Quizone.png)
+![](Quiztwo.png)
+![](Quizthree.png)
+![](Quizfour.png)
